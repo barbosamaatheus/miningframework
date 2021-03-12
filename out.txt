@@ -1,0 +1,1 @@
+source(org.elasticsearch.index.analysis.commongrams.CommonGramsTokenFilterFactoryTests, testCommonGramsAnalysis, 144) => sink(org.elasticsearch.index.analysis.commongrams.CommonGramsTokenFilterFactoryTests, testCommonGramsAnalysis, 143)

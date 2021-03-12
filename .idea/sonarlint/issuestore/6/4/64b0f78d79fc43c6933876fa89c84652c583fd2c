@@ -1,0 +1,12 @@
+
+[	java:S112|"FDefine and throw a dedicated exception instead of using a generic one.(€“°Â
+¯
+java:S1598"“This file "base.java" should be located in "org\elasticsearch\test" directory, not in "C:\Users\Barbosa\Documents\development\UFPE\spgroup\miningframework\output\files\elasticsearch\0404db65e3497452886173957729c8e82cfd4a03\source\org\elasticsearch\test\ESSingleNodeTestCase".(¥¦óÃıÿÿÿÿ
+e
+java:S3008E"ORename this field "NODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦çë
+L
+java:S2696O"6Make the enclosing method "static" or remove this set.(£”²±
+‚
+java:S1130|"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(€“°Â
+U
+java:S3400Â"9Remove this method and declare a constant for this value.(â˜Óïøÿÿÿÿ
