@@ -103,7 +103,7 @@ class Main {
         if (appArguments.getOaIntraHybridPA()) {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra Hybrid Pointer Analysis", "oa-hybrid-pa", sootWrapper, appArguments.getTimeout()))
         }
-        if (appArguments.getOaIntraHybridPA()) {
+        if (appArguments.getOaInterHybridPA()) {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Hybrid Pointer Analysis", "ioa-hybrid-pa", sootWrapper, appArguments.getTimeout()))
         }
         if (appArguments.getDfpIntra()) {
