@@ -27,6 +27,8 @@ class ArgsParser {
         this.cli.ioa(longOpt: 'overriding-interprocedural',  "Run overriding-interprocedural")
         this.cli.oaWithoutPA(longOpt: 'oa-without-pa',  "Run oa-without-pa")
         this.cli.ioaWithoutPA(longOpt: 'ioa-without-pa',  "Run ioa-without-pa")
+        this.cli.oaHybridPA(longOpt: 'oa-hybrid-pa',  "Run oa-without-pa")
+        this.cli.ioaHybridPA(longOpt: 'ioa-hybrid-pa',  "Run ioa-without-pa")
         this.cli.dfp(longOpt: 'dfp-intra',  "Run dfp-intra")
         this.cli.idfp(longOpt: 'dfp-inter',  "Run dfp-inter")
         this.cli.cd(longOpt: 'cd',  "Run cd")
@@ -79,6 +81,12 @@ class ArgsParser {
         }
         if (this.options.ioa) {
             args.setOaInter(true)
+        }
+        if (this.options.oaHybridPA) {
+            args.setOaIntraHybridPA(true)
+        }
+        if (this.options.ioaHybridPA) {
+            args.setOaInterHybridPA(true)
         }
         if (this.options.oaWithoutPA) {
             args.setOaIntraWithoutPA(true)

@@ -9,6 +9,8 @@ class Arguments {
     private boolean cfInter
     private boolean oaIntra;
     private boolean oaInter;
+    private boolean oaIntraHybridPA;
+    private boolean oaInterHybridPA;
     private boolean oaIntraWithoutPA;
     private boolean oaInterWithoutPA;
     private boolean dfpIntra
@@ -33,6 +35,8 @@ class Arguments {
         cfInter = false
         oaIntra = false
         oaInter = false
+        oaIntraHybridPA = false
+        oaInterHybridPA = false
         oaIntraWithoutPA = false
         oaInterWithoutPA = false
         dfpIntra = false
@@ -142,6 +146,22 @@ class Arguments {
 
     void setOaInter(boolean oaInter) {
         this.oaInter = oaInter
+    }
+
+    boolean getOaIntraHybridPA() {
+        return oaIntraHybridPA
+    }
+
+    void setOaIntraHybridPA(boolean oaIntraHybridPA) {
+        this.oaIntraHybridPA = oaIntraHybridPA
+    }
+
+    boolean getOaInterHybridPA() {
+        return oaInterHybridPA
+    }
+
+    void setOaInterHybridPA(boolean oaInterHybridPA) {
+        this.oaInterHybridPA = oaInterHybridPA
     }
 
     boolean getDfpIntra() {

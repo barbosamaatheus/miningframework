@@ -100,7 +100,12 @@ class Main {
         if (appArguments.getOaInterWithoutPA()) {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Without Pointer Analysis", "ioa-without-pa", sootWrapper, appArguments.getTimeout()))
         }
-
+        if (appArguments.getOaIntraHybridPA()) {
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra Hybrid Pointer Analysis", "oa-hybrid-pa", sootWrapper, appArguments.getTimeout()))
+        }
+        if (appArguments.getOaIntraHybridPA()) {
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Hybrid Pointer Analysis", "ioa-hybrid-pa", sootWrapper, appArguments.getTimeout()))
+        }
         if (appArguments.getDfpIntra()) {
             detectionAlgorithms.add(new NonCommutativeConflictDetectionAlgorithm("DFP-Intra", "dfp-intra", sootWrapper, appArguments.getTimeout()))
         }
