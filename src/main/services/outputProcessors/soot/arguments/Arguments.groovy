@@ -9,6 +9,10 @@ class Arguments {
     private boolean cfInter
     private boolean oaIntra;
     private boolean oaInter;
+    private boolean oaIntraHybridPA;
+    private boolean oaInterHybridPA;
+    private boolean oaIntraWithoutPA;
+    private boolean oaInterWithoutPA;
     private boolean dfpIntra
     private boolean dfpInter
     private boolean cd
@@ -31,6 +35,10 @@ class Arguments {
         cfInter = false
         oaIntra = false
         oaInter = false
+        oaIntraHybridPA = false
+        oaInterHybridPA = false
+        oaIntraWithoutPA = false
+        oaInterWithoutPA = false
         dfpIntra = false
         dfpInter = false
         cd = false
@@ -43,6 +51,22 @@ class Arguments {
         timeout = 240
         printDepthSVFA = false
         depthLimit = 5
+    }
+
+    boolean getOaIntraWithoutPA() {
+        return oaIntraWithoutPA
+    }
+
+    void setOaIntraWithoutPA(boolean oaIntraWithoutPA) {
+        this.oaIntraWithoutPA = oaIntraWithoutPA
+    }
+
+    boolean getOaInterWithoutPA() {
+        return oaInterWithoutPA
+    }
+
+    void setOaInterWithoutPA(boolean oaInterWithoutPA) {
+        this.oaInterWithoutPA = oaInterWithoutPA
     }
 
     void setDepthLimit(long depthLimit) {
@@ -122,6 +146,22 @@ class Arguments {
 
     void setOaInter(boolean oaInter) {
         this.oaInter = oaInter
+    }
+
+    boolean getOaIntraHybridPA() {
+        return oaIntraHybridPA
+    }
+
+    void setOaIntraHybridPA(boolean oaIntraHybridPA) {
+        this.oaIntraHybridPA = oaIntraHybridPA
+    }
+
+    boolean getOaInterHybridPA() {
+        return oaInterHybridPA
+    }
+
+    void setOaInterHybridPA(boolean oaInterHybridPA) {
+        this.oaInterHybridPA = oaInterHybridPA
     }
 
     boolean getDfpIntra() {

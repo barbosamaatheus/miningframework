@@ -89,12 +89,23 @@ class Main {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("Confluence Inter", "dfp-confluence-interprocedural", sootWrapper, appArguments.getTimeout()))
         }
         if (appArguments.getOaIntra()) {
-            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra", "overriding-intraprocedural", sootWrapper, appArguments.getTimeout()))
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra", "oa", sootWrapper, appArguments.getTimeout()))
         }
         if (appArguments.getOaInter()) {
-            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter", "overriding-interprocedural", sootWrapper, appArguments.getTimeout()))
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter", "ioa", sootWrapper, appArguments.getTimeout()))
         }
-
+        if (appArguments.getOaIntraWithoutPA()) {
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra Without Pointer Analysis", "oa-without-pa", sootWrapper, appArguments.getTimeout()))
+        }
+        if (appArguments.getOaInterWithoutPA()) {
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Without Pointer Analysis", "ioa-without-pa", sootWrapper, appArguments.getTimeout()))
+        }
+        if (appArguments.getOaIntraHybridPA()) {
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra Hybrid Pointer Analysis", "oa-hybrid-pa", sootWrapper, appArguments.getTimeout()))
+        }
+        if (appArguments.getOaInterHybridPA()) {
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Hybrid Pointer Analysis", "ioa-hybrid-pa", sootWrapper, appArguments.getTimeout()))
+        }
         if (appArguments.getDfpIntra()) {
             detectionAlgorithms.add(new NonCommutativeConflictDetectionAlgorithm("DFP-Intra", "dfp-intra", sootWrapper, appArguments.getTimeout()))
         }
