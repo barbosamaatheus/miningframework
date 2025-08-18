@@ -49,7 +49,7 @@ class NonCommutativeConflictDetectionAlgorithm extends ConflictDetectionAlgorith
     }
 
     private SootConfig buildSootConfig(String filePath, Scenario scenario) {
-        SootConfig config = new SootConfig(filePath, scenario.getClassPath(), this.mode);
+        SootConfig config = new SootConfig(filePath, scenario.getClassPath(), super.getMode());
         config.addOption("-entrypoints", scenario.getEntrypoints());
         config.addOption("-depthLimit", this.getDepthLimit());
         return config;
@@ -57,6 +57,6 @@ class NonCommutativeConflictDetectionAlgorithm extends ConflictDetectionAlgorith
 
     @Override
     public String toString() {
-        return "NonCommutativeConflictDetectionAlgorithm{name = ${this.name}}";
+        return "NonCommutativeConflictDetectionAlgorithm{name = ${super.getName()}}";
     }
 }

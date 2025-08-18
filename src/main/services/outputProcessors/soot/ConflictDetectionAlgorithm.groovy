@@ -38,6 +38,10 @@ class ConflictDetectionAlgorithm {
         this.depthLimit = depthLimit;
     }
 
+    String getMode() {
+        return mode
+    }
+
     String getName() {
         return name
     }
@@ -147,4 +151,5 @@ class ConflictDetectionAlgorithm {
         }
         return result
     }
+
 }
