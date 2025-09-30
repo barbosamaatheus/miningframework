@@ -76,7 +76,7 @@ class Main {
     private static ArrayList<ConflictDetectionAlgorithm> configureDetectionAlgorithms(Arguments appArguments, SootAnalysisWrapper sootWrapper) {
         List<ConflictDetectionAlgorithm> detectionAlgorithms = new ArrayList<ConflictDetectionAlgorithm>();
 
-
+        String callgraph = appArguments.getCallgraph();
         long timeout = appArguments.getTimeout()
         long depthLimit = appArguments.getDepthLimit();
         if (appArguments.getDfIntra()) {
@@ -101,7 +101,7 @@ class Main {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra Without Pointer Analysis", "oa-without-pa", sootWrapper, timeout, false,depthLimit))
         }
         if (appArguments.getOaInterWithoutPA()) {
-            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Without Pointer Analysis", "ioa-without-pa", sootWrapper, timeout, true,depthLimit))
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Without Pointer Analysis", "ioa-without-pa", sootWrapper, timeout, true,depthLimit, callgraph))
         }
 
         if (appArguments.getDfpIntra()) {

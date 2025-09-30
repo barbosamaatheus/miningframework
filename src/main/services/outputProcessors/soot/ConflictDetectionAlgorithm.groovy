@@ -19,23 +19,23 @@ class ConflictDetectionAlgorithm {
     private SootAnalysisWrapper sootWrapper;
     private boolean interprocedural;
     private long depthLimit;
+    private String callgraph;
 
 
-    ConflictDetectionAlgorithm(String name, String mode, SootAnalysisWrapper sootWrapper, long timeout) {
-        this(name, mode, sootWrapper, timeout, false, 5);
-    }
-
-    ConflictDetectionAlgorithm(String name, String mode, SootAnalysisWrapper sootWrapper, long timeout, boolean interprocedural) {
-        this(name, mode, sootWrapper, timeout, interprocedural, 5);
-    }
-
-    ConflictDetectionAlgorithm(String name, String mode, SootAnalysisWrapper sootWrapper, long timeout, boolean interprocedural, long depthLimit) {
-        this.name = name;
-        this.mode = mode;
-        this.timeout = timeout;
-        this.sootWrapper = sootWrapper;
-        this.interprocedural = interprocedural;
-        this.depthLimit = depthLimit;
+    ConflictDetectionAlgorithm(String name,
+                               String mode,
+                               SootAnalysisWrapper sootWrapper,
+                               long timeout,
+                               boolean interprocedural = false,
+                               long depthLimit = 5,
+                               String callgraph = "SPARK") {
+        this.name = name
+        this.mode = mode
+        this.sootWrapper = sootWrapper
+        this.timeout = timeout
+        this.interprocedural = interprocedural
+        this.depthLimit = depthLimit
+        this.callgraph = callgraph
     }
 
     String getMode() {
@@ -69,6 +69,10 @@ class ConflictDetectionAlgorithm {
         return depthLimit
     }
 
+    String getCallgraph() {
+        return callgraph
+    }
+
     String run(Scenario scenario) {
         try {
             println "Running ${toString()}"
@@ -83,6 +87,7 @@ class ConflictDetectionAlgorithm {
 
             sootConfig.addOption("-entrypoints", scenario.getEntrypoints());
             sootConfig.addOption("-depthLimit", this.getDepthLimit());
+            sootConfig.addOption("-cg", this.getCallgraph());
 
             return runAndReportResult(sootConfig);
         } catch (ClassNotFoundInJarException e) {
