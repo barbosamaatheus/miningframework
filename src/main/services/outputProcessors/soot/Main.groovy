@@ -89,13 +89,13 @@ class Main {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("Confluence Intra", "dfp-confluence-intraprocedural", sootWrapper, timeout, false,depthLimit))
         }
         if (appArguments.getCfInter()) {
-            detectionAlgorithms.add(new ConflictDetectionAlgorithm("Confluence Inter", "dfp-confluence-interprocedural", sootWrapper, timeout, true,depthLimit))
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("Confluence Inter", "dfp-confluence-interprocedural", sootWrapper, timeout, true,depthLimit, callgraph))
         }
         if (appArguments.getOaIntra()) {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra", "oa", sootWrapper, timeout, false,depthLimit))
         }
         if (appArguments.getOaInter()) {
-            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter", "ioa", sootWrapper, timeout, true,depthLimit))
+            detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter", "ioa", sootWrapper, timeout, true,depthLimit, callgraph))
         }
         if (appArguments.getOaIntraWithoutPA()) {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Intra Without Pointer Analysis", "oa-without-pa", sootWrapper, timeout, false,depthLimit))
@@ -103,12 +103,11 @@ class Main {
         if (appArguments.getOaInterWithoutPA()) {
             detectionAlgorithms.add(new ConflictDetectionAlgorithm("OA Inter Without Pointer Analysis", "ioa-without-pa", sootWrapper, timeout, true,depthLimit, callgraph))
         }
-
         if (appArguments.getDfpIntra()) {
             detectionAlgorithms.add(new NonCommutativeConflictDetectionAlgorithm("DFP-Intra", "dfp-intra", sootWrapper, timeout, false,depthLimit))
         }
         if (appArguments.getDfpInter()) {
-            detectionAlgorithms.add(new NonCommutativeConflictDetectionAlgorithm("DFP-Inter", "dfp-inter", sootWrapper, timeout, true,depthLimit))
+            detectionAlgorithms.add(new NonCommutativeConflictDetectionAlgorithm("DFP-Inter", "dfp-inter", sootWrapper, timeout, true,depthLimit, callgraph))
         }
         if (appArguments.getCd()) {
             detectionAlgorithms.add(new NonCommutativeConflictDetectionAlgorithm("CD", "cd", sootWrapper, timeout, false,depthLimit))
