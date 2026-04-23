@@ -61,6 +61,7 @@ Options:
   -depthLimit                             Sets the depth limit on accessing methods when performing Overriding Assignment Interprocedural, Direct Flow Interprocedural and Confluence Interprocedural analyses. Default = 5
  -printDepthSVFA                         Print depth in SVFA analysis
  -cg,--callgraph <algorithm>             Select call graph algorithm [CHA, RTA, VTA, SPARK]
+ -prt,--partial-results-on-timeout       When a soot analysis times out, capture and record the partial results
 ```
 
 For example: 

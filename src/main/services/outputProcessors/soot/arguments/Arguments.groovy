@@ -237,7 +237,7 @@ class Arguments {
         this.callgraph = callgraph
     }
 
-    boolean getPartialResultsOnTimeout() {
+    boolean isPartialResultsOnTimeout() {
         return partialResultsOnTimeout
     }
 

@@ -40,7 +40,8 @@ class Main {
                     sootRunner.setDetectionAlgorithms(configureDetectionAlgorithms(appArguments, sootWrapper))
                 }
 
-                if (appArguments.getPartialResultsOnTimeout()) {
+                if (appArguments.isPartialResultsOnTimeout()) {
+                    println "Setting partial results on timeout"
                     sootRunner.configurePartialResultsOnTimeout(true)
                 }
 
