@@ -148,7 +148,7 @@ class ConflictDetectionAlgorithm {
                 processOutputThread.join(GRACE_PERIOD_MILLIS)
                 String partial = atomicResult.get()
                 println "Result at timeout: ${partial}"
-                return partial
+                return partial + "-timeout"
             } else {
                 processOutputThread.interrupt();
             }
